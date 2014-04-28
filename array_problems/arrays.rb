@@ -41,26 +41,34 @@ module ArrayUtil
     end
   end
 
+
   def self.sum_arrays(array1, array2)
     a = array1
     b = array2
     c = a.length
     d = b.length
     total = []
+    x = 0
     if c > 1 && d > 1
-      for x in a
-        z = a[x] + b[x]
-        total << z
-        x +=1
-        total
-      end
+        while x < c && x < d
+          z = a[x] + b[x]
+          total << z
+          x += 1
+        end
+      return total
     elsif c == 1 && d == 1
-      total = [a.inject { |sum,x| sum + x } + b.inject { |sum,x| sum + x }]
+      total = [a.inject { |sum,num| sum + num } + b.inject { |sum,num| sum + num }]
       total
     else
       return []
     end
   end
-
-
 end
+
+
+        # for x in a
+        #   z = a[x] + b[x]
+        #   total << z
+        #   x +=1
+        #   total
+        # end
