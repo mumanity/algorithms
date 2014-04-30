@@ -1,5 +1,5 @@
 require 'pry-debugger'
-REQUIRE
+
 module Set1
   # def self.swap_small(array)
   #   smallest = array.min PATRICK IS NOT A FAN OF THIS!!!!
@@ -13,7 +13,7 @@ module Set1
       smallest = array[0]
       first = array.first
 
-      array.each do |x|
+      for x in array
         if x < smallest
           smallest = x
         end
@@ -35,8 +35,8 @@ module Set1
       false
     end
 
-    array.each do |x|
-      array.each do |y|
+    for x in array
+      for y in array
         if x + y == sum
           return true
         end
@@ -57,10 +57,10 @@ module Set1
       return true
     end
 
-    array.each do |x|
-      array.each do |y|
-        array.each do |z|
-          if (x + y + z == 0)
+    for x in array
+      for y in array
+        for z in array
+          if x + y + z == 0
             return true
           end
         end
