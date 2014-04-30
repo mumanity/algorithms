@@ -12,26 +12,44 @@ module Set1
       smallest = array[0]
       first = array.first
 
-      if array.length > 1
-        for x in array
-          if x < smallest
-            smallest = x
-          else
-          end
+      array.each do |x|
+        if x < smallest
+          smallest = x
         end
-        array.delete(first)
+      if array[0] == smallest
+        array
+      else
         array.delete(smallest)
-        array.unshift(smallest)
+        array.delete(first)
         array.push(first)
+        array.unshift(smallest)
       end
-
-      array
+        array
+      end
     end
 
   def self.find_sum_2(array, sum = 0)
+    if array.length == 0
+      false
+    end
+
+    array.each do |x|
+      array.each do |y|
+        if (x + y == sum)
+          return true
+        end
+      end
+    end
+    false
   end
 
   def self.find_sum_3(array)
+    if array.length == 0
+      return false
+    end
+    if array[0] == 0 && array.length == 1
+      return true
+    end
   end
 end
 
