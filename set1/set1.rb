@@ -7,7 +7,7 @@ module Set1
   #   array
   # end
 
-
+# O(n^2)
     def self.swap_small(array)
       smallest = array[0]
       first = array.first
@@ -28,6 +28,7 @@ module Set1
       end
     end
 
+# O(n^2)
   def self.find_sum_2(array, sum = 0)
     if array.length == 0
       false
@@ -35,7 +36,7 @@ module Set1
 
     array.each do |x|
       array.each do |y|
-        if (x + y == sum)
+        if x + y == sum
           return true
         end
       end
@@ -43,6 +44,7 @@ module Set1
     false
   end
 
+# O(n^2)
   def self.find_sum_3(array)
     if array.length == 0
       return false
