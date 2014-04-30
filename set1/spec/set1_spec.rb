@@ -59,7 +59,7 @@ describe "Set1" do
       expect(Set1.find_sum_3([5, 2, 0, -100])).to eq(true)
     end
 
-    xit "should return true if 3 numbers in the array add to 0" do
+    it "should return true if 3 numbers in the array add to 0" do
       expect(Set1.find_sum_3([10, 2, 100, -200, -102, 5])).to eq(true)
       expect(Set1.find_sum_3([10, -51, 100, -201, 102, 5])).to eq(true)
       expect(Set1.find_sum_3([10, 51, 100, -201, -102, 5])).to eq(true) # 51, 51, -102

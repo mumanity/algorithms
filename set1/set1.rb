@@ -53,6 +53,16 @@ module Set1
     if array.include?(0)
       return true
     end
+
+    array.each do |x|
+      array.each do |y|
+        array.each do |z|
+          if (x + y + z == 0)
+            return true
+          end
+        end
+      end
+    end
   end
 end
 
