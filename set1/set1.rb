@@ -50,6 +50,9 @@ module Set1
     if array[0] == 0 && array.length == 1
       return true
     end
+    if array.include?(0)
+      return true
+    end
   end
 end
 

@@ -55,7 +55,7 @@ describe "Set1" do
       expect(Set1.find_sum_3([0])).to eq(true)
     end
 
-    xit "should return true for an array with the number 0 in it" do
+    it "should return true for an array with the number 0 in it" do
       expect(Set1.find_sum_3([5, 2, 0, -100])).to eq(true)
     end
 
