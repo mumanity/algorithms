@@ -1,4 +1,5 @@
 require 'pry-debugger'
+REQUIRE
 module Set1
   # def self.swap_small(array)
   #   smallest = array.min PATRICK IS NOT A FAN OF THIS!!!!
@@ -44,7 +45,7 @@ module Set1
     false
   end
 
-# O(n^2)
+# O(n^3)
   def self.find_sum_3(array)
     if array.length == 0
       return false
