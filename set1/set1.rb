@@ -1,12 +1,20 @@
 require 'pry-debugger'
 
 module Set1
+
+# SOLUTION
+  # O(n)
   # def self.swap_small(array)
-  #   smallest = array.min PATRICK IS NOT A FAN OF THIS!!!!
-  #   array.delete(smallest)
-  #   array.unshift(smallest)
+  #   small_index = 0
+  #   small_element = array.first
+
+  #   for i in 0...array.length
+  #     small_index = i if array[i] < array[small_index]
+  #   end
+  #   array[0], array[small_index] = array[small_index], array[0]
   #   array
   # end
+
 
 # O(n^2)
     def self.swap_small(array)
@@ -17,17 +25,30 @@ module Set1
         if x < smallest
           smallest = x
         end
-      if array[0] == smallest
-        array
-      else
-        array.delete(smallest)
-        array.delete(first)
-        array.push(first)
-        array.unshift(smallest)
-      end
+        if array[0] == smallest
+          array
+        else
+          array.delete(smallest)
+          array.delete(first)
+          array.push(first)
+          array.unshift(smallest)
+        end
         array
       end
     end
+
+# SOLUTION
+# O(n^2)
+# def self.find_sum_2(array, sum = 0)
+#   (0...array.length).each do |i|
+#   # for i in 0...array.length --> eq. to above
+#     (i...array.length).each do |j|
+#       return true if array[i] + array[j] == sum
+#     end
+#   end
+#   false
+# end
+
 
 # O(n^2)
   def self.find_sum_2(array, sum = 0)
@@ -45,7 +66,21 @@ module Set1
     false
   end
 
+# SOLUTION
 # O(n^3)
+# def self.find_sum_3(array, sum=0)
+#   (0...array.length).each do |i|
+#     (i...array.length).each do |j|
+#       (j...array.length).each do |k|
+#       return true if array[i] + array[j] + array[k] == sum
+#       end
+#     end
+#   end
+#   false
+# end
+
+
+O(n^3)
   def self.find_sum_3(array)
     if array.length == 0
       return false
