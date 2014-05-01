@@ -51,7 +51,16 @@ class Deck
     @deck
   end
 
-end
+# IN CLASS ANSWER
+  # def create_52_card_deck
+  #   value = (2.14).to_a
+  #   ['hearts', 'clubs', 'diamonds', 'spades'].each do |suit|
+  #     (2..10).to_a + ['J','Q','K','A'].each do |rank|
+  #       @deck << Card.new(rank, value, suit)
+  #     end
+  #   end
+  #   @deck
+  # end
 
 # You may or may not need to alter this class
 class Player
