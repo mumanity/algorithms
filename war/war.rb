@@ -50,6 +50,7 @@ class Deck
     end
     @deck
   end
+end
 
 # IN CLASS ANSWER
   # def create_52_card_deck

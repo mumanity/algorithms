@@ -1,31 +1,38 @@
 require 'rubygems'
 require 'rspec'
 require 'pry-debugger'
-require_relative '../war.rb'
+require_relative "../war.rb"
 
-# shuffle deck
-# deal cards to players
-# play hand (loop) until winner
-# announce winner
-# war api takes over
+describe 'Card' do
+  it 'creates a card with a rank, value, and suit' do
+    card = Card.new(3, 3, 'heart')
 
+    expect(card.rank).to eq(3)
+    expect(card.value).to eq(3)
+    expect(card.suit).to eq('heart')
+  end
+end
 
-# GAME PLAY
-# deck is shuffled
-# 2 players dealt 26 cards *blind
-# rotating turns
-# on turn both players see top card
-# player with higher card wins round
-# both cards go to bottom of winner's deck
-# if value == value initiate WAR!
-# both players play 3 cards each *blind
-# both players play a 4th card face up
-# player with higher card wins round
-# winning player takes 10 cards to bottom of their deck
+describe 'Deck' do
+  it 'creates a 52 card deck' do
+    deck = Deck.new
+    deck.create_52_card_deck
 
+    expect(@deck.length).to eq(51)
+  end
 
-# calc winner < deck
+  xit 'can shuffle a deck' do
 
-values = [14, 13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2]
-rank = ['A' = 14], ['K' = 13], ['Q' = 12], ['J' = 11], 10, 9, 8, 7, 6, 5, 4, 3, 2]
-suit = ['hearts', 'diamonds', 'clubs', 'spades']
+  end
+
+  xit 'can deal 26 cards to players' do
+
+  end
+
+end
+
+# Shuffle the deck
+# Deal out the cards to the players
+# Play each hand until a player wins
+# List who won the game
+# The WarAPI takes care of the logic for each turn
