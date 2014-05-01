@@ -12,6 +12,16 @@ module ArrayUtil
     check
   end
 
+# In class demo:
+  # def self.max(array)
+#   max_value = array[0]
+#     for i in 0..array.length
+#       max_value = array[i] if array[i] > max_value
+#     end
+#     max_value
+#   end
+  # end
+
   # Canaan helped by saying to define check as array[0]
   # so that it would look at the first value. Keeping my
   # original method since it was the only thing I had to
@@ -28,6 +38,15 @@ module ArrayUtil
   #   check
   # end
 
+# In class demo:
+#   def self.middle_element(array)
+#     return nil if array.length == 0
+#     if array.length % 2 == 1
+#       return array[array.length/2]
+#     else
+#       array[array.length/2] + array[array.length/2 - 1] / 2.0
+#     end
+#   end
 
   def self.middle_element(array)
     arrayLength = array.length
@@ -41,34 +60,30 @@ module ArrayUtil
     end
   end
 
+# In class demo:
+#   def self.sum_arrays(array1, array2)
+#     sol = []
+#       for i in 0...array1.length
+#         sol << array1[i] + array2[i]
+#       end
+#     sol
+#   end
 
   def self.sum_arrays(array1, array2)
-    a = array1
-    b = array2
-    c = a.length
-    d = b.length
+    array1 = array1
+    array2 = array2
+    lengthOne = array1.length
+    lengthTwo = array2.length
     total = []
     x = 0
-    if c > 1 && d > 1
-        while x < c && x < d
-          z = a[x] + b[x]
-          total << z
+    if lengthOne >= 1 && lengthTwo >= 1
+        while x < lengthOne && x < lengthTwo
+          total << array1[x] + array2[x]
           x += 1
         end
       return total
-    elsif c == 1 && d == 1
-      total = [a.inject { |sum,num| sum + num } + b.inject { |sum,num| sum + num }]
-      total
     else
       return []
     end
   end
 end
-
-
-        # for x in a
-        #   z = a[x] + b[x]
-        #   total << z
-        #   x +=1
-        #   total
-        # end
