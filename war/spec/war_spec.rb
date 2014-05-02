@@ -15,14 +15,20 @@ end
 
 describe 'Deck' do
   it 'creates a 52 card deck' do
-    deck = Deck.new
-    deck.create_52_card_deck
+    mine = Deck.new
+    mine.create_52_card_deck
 
-    expect(@deck.length).to eq(51)
+    expect(mine.deck.length).to eq(52)
   end
 
-  xit 'can shuffle a deck' do
+  it 'can shuffle a deck' do
+    mine = Deck.new
+    mine.create_52_card_deck
+    
+    yours = mine.shuffle
 
+    expect(mine.deck.length).to eq(52)
+    expect(yours).to_not eq(mine)
   end
 
   xit 'can deal 26 cards to players' do
@@ -31,7 +37,6 @@ describe 'Deck' do
 
 end
 
-# Shuffle the deck
 # Deal out the cards to the players
 # Play each hand until a player wins
 # List who won the game

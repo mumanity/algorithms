@@ -32,6 +32,7 @@ class Deck
       y = rand(size)
       @deck[x], @deck[y] = @deck[y], @deck[x]
     end
+    @deck
   end
 
 #!!!!! Remove the top card from your deck and return it
@@ -42,7 +43,7 @@ class Deck
   # Reset this deck with 52 cards
   def create_52_card_deck
     suits = ['hearts', 'clubs', 'diamonds', 'spades']
-    value = [14, 13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2]
+    value = [14, 13, 12, 11, 10, 9, 8, 7, 6, 5, 4, 3, 2]
     for y in suits
       for x in value
         @deck << Card.new(x, x, y)
