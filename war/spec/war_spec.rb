@@ -60,15 +60,18 @@ describe 'War' do
     end
   end
 
-describe 'WarAPI' do
-  it "exists" do
-    expect(WarAPI).to be_a(Class)
-  end
+  describe 'WarAPI' do
+    it "exists" do
+      expect(WarAPI).to be_a(Class)
+    end
 
-  xit "let's me win" do
-    
+    it "let's me win" do
+      game = War.new('me', 'loser')
+      game.play_game
+
+      expect().to eq()
+    end
   end
-end
 
 end
 

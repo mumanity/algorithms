@@ -70,12 +70,17 @@ class Player
   def initialize(name)
     @name = name
     @hand = Deck.new
+
+
+  end
+  def self.hand
   end
 end
 
 
 class War
   attr_accessor :player1, :player2
+
   def initialize(player1, player2)
     @deck = Deck.new
     @player1 = Player.new(player1)
@@ -91,8 +96,18 @@ class War
 
   # You will need to play the entire game in this method using the WarAPI
   def play_game
-    WarAPI.play_turn()
+    until @deck.length == 0 do 
+      round = WarAPI.play_turn(@player1, @player1.deal_card, @player2, @player2.deal_card)
+
+      round[@player1].each do |value|
+         key.hand.deck << value 
+      end
+      round[@player2].each do |value|
+         key.hand.deck << value 
+      end
+    end
   end
+
 end
 
 
