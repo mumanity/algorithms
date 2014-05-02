@@ -20,7 +20,7 @@ class Deck
   end
 
   # Given a card, insert it on the bottom your deck
-  def add_card(card)
+  def self.add_card(card)
     @deck.unshift(card)
   end
 
@@ -66,6 +66,7 @@ end
 
 # You may or may not need to alter this class
 class Player
+  attr_accessor :name, :hand
   def initialize(name)
     @name = name
     @hand = Deck.new
@@ -74,16 +75,23 @@ end
 
 
 class War
+  attr_accessor :player1, :player2
   def initialize(player1, player2)
     @deck = Deck.new
     @player1 = Player.new(player1)
     @player2 = Player.new(player2)
     # You will need to shuffle and pass out the cards to each player
+    @deck.create_52_card_deck
+    @deck.shuffle
+    26.times do |deal|
+      @player1.hand.deck << @deck.deal_card
+      @player2.hand.deck << @deck.deal_card
+    end
   end
 
   # You will need to play the entire game in this method using the WarAPI
   def play_game
-    # WarAPI.play_turn()
+    WarAPI.play_turn()
   end
 end
 
@@ -103,14 +111,3 @@ class WarAPI
 end
 
 
-# create_52_card_deck WORKS IRB
-#
-# deck = []
-
-#   suits = ['hearts', 'clubs', 'diamonds', 'spades']
-#   value = [14, 13, 12, 10, 9, 8, 7, 6, 5, 4, 3, 2]
-#     for y in suits
-#       for x in value
-#         deck << [x, x, y]
-#       end
-#     end
